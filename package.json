@@ -4,11 +4,12 @@
     "email": "hasan.karahan@blackhan.com",
     "url": "https://github.com/hsk81"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@dizmo/types-storage": "^1.0.1",
+    "@dizmo/types-uuid": "^1.0.1"
+  },
   "description": "Bundle type definitions",
   "devDependencies": {
-    "@dizmo/types-storage": "^1.0.1",
-    "@dizmo/types-uuid": "^1.0.1",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
     "babel-cli": "^6.26.0",
