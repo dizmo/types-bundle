@@ -15,8 +15,11 @@ npm install @dizmo/types-bundle --save
 let lib = require('@dizmo/types-bundle');
 ```
 ### Examples
-```javascript
-...
+```typescript
+import Bundle from '@dizmo/types-bundle'
+```
+```typescript
+declare const bundle: Bundle;
 ```
 ## Development
 ### Build
