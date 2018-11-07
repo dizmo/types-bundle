@@ -9,8 +9,10 @@ describe("Bundle", function () {
     it("should not exist", function () {
         chai_1.expect(typeof bundle === "undefined" ? "undefined" : _typeof(bundle)).to.eq("undefined");
     });
-    it("should be declareable", function () {
-        chai_1.expect(typeof bundle === "undefined" ? "undefined" : _typeof(bundle)).to.eq("undefined");
+    it("should not be referenceable", function () {
+        chai_1.expect(function () {
+            return bundle;
+        }).to.throw(ReferenceError);
     });
 });
 //# sourceMappingURL=test.js.map

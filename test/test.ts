@@ -8,7 +8,7 @@ describe("Bundle", () => {
     it("should not exist", () => {
         expect(typeof bundle).to.eq("undefined");
     });
-    it("should be declareable", () => {
-        expect(typeof bundle).to.eq("undefined");
+    it("should not be referenceable", () => {
+        expect(() => bundle).to.throw(ReferenceError);
     });
 });
