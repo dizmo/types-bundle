@@ -48,7 +48,7 @@ export interface Bundle {
 
 export interface Bundle {
     getDizmos:
-    <T extends Bundle>() => T[];
+    <T extends any/*Dizmo*/>() => T[];
     instantiateDizmo: (
         attributes?: object,
         publicProperties?: object,

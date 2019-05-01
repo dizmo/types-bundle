@@ -24,7 +24,7 @@ export interface Bundle {
     update: () => void;
 }
 export interface Bundle {
-    getDizmos: <T extends Bundle>() => T[];
+    getDizmos: <T extends any>() => T[];
     instantiateDizmo: (attributes?: object, publicProperties?: object, privateProperties?: object, callback?: Function) => void;
     uninstall: () => void;
 }
