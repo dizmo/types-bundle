@@ -1,4 +1,7 @@
-/* tslint:disable:ban-types interface-name */
+/* tslint:disable ban-types */
+/* tslint:disable interface-name */
+/* tslint:disable variable-name */
+
 import { Storage } from "@dizmo/types-storage";
 import { UUID } from "@dizmo/types-uuid";
 
@@ -25,34 +28,27 @@ export interface Bundle {
 export interface Bundle {
     subscribeToAttribute:
     <T>(path: string,
-        callback: (path: string, value: T) => void,
-        subscribedCallback?: Function,
+        callback: (path: string, value: T, old_value?: T) => void,
+        subscribed_callback?: Function,
     ) => UUID;
 
     subscribeToAttributeConditional:
     <T>(path: string, condition: string | boolean | number,
-        callback: (path: string, value: T) => void,
-        subscribedCallback?: Function,
+        callback: (path: string, value: T, old_value?: T) => void,
+        subscribed_callback?: Function,
     ) => UUID;
 
     unsubscribeAttribute:
-    <T>(subscriptionId: UUID) => void;
-}
-
-export interface Bundle {
-    getUpdateInformation:
-    () => any;
-    update:
-    () => void;
+    <T>(subscription_id: UUID) => void;
 }
 
 export interface Bundle {
     getDizmos:
     <T extends any/*Dizmo*/>() => T[];
     instantiateDizmo: (
-        attributes?: object,
-        publicProperties?: object,
-        privateProperties?: object,
+        attributes: Object,
+        public_properties: Object,
+        private_properties: Object,
         callback?: Function,
     ) => void;
     uninstall:

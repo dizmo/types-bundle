@@ -15,17 +15,13 @@ export interface Bundle {
     setAttribute: <T>(path: string, value: T) => void;
 }
 export interface Bundle {
-    subscribeToAttribute: <T>(path: string, callback: (path: string, value: T) => void, subscribedCallback?: Function) => UUID;
-    subscribeToAttributeConditional: <T>(path: string, condition: string | boolean | number, callback: (path: string, value: T) => void, subscribedCallback?: Function) => UUID;
-    unsubscribeAttribute: <T>(subscriptionId: UUID) => void;
-}
-export interface Bundle {
-    getUpdateInformation: () => any;
-    update: () => void;
+    subscribeToAttribute: <T>(path: string, callback: (path: string, value: T, old_value?: T) => void, subscribed_callback?: Function) => UUID;
+    subscribeToAttributeConditional: <T>(path: string, condition: string | boolean | number, callback: (path: string, value: T, old_value?: T) => void, subscribed_callback?: Function) => UUID;
+    unsubscribeAttribute: <T>(subscription_id: UUID) => void;
 }
 export interface Bundle {
     getDizmos: <T extends any>() => T[];
-    instantiateDizmo: (attributes?: object, publicProperties?: object, privateProperties?: object, callback?: Function) => void;
+    instantiateDizmo: (attributes: Object, public_properties: Object, private_properties: Object, callback?: Function) => void;
     uninstall: () => void;
 }
 export default Bundle;
